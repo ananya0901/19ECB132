@@ -1,0 +1,20 @@
+#include<stdio.h>
+void main()
+{
+    int a,b,sol;
+    char x;
+    scanf("%d %d %c",&a,&b,&x);
+    switch(x){
+        case'%':sol=a%b;
+        break;
+        case'*':sol=a*b;
+        break;
+        case'/':sol=a/b;
+        break;
+        case'+':sol=a+b;
+        break;
+        case'-':sol=a-b;
+        break;
+    }
+    printf("%d",sol);
+}
