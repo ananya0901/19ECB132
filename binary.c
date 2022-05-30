@@ -138,3 +138,10 @@
       
         return 0;
     }
+/* output:-
+Height of the first Tree is 3
+
+Height of the second Tree is    5
+
+Height of the third Tree is 1
+*/
