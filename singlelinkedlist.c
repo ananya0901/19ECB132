@@ -33,6 +33,7 @@ void insertAtEnd(struct Node** head_ref, int new_data) {
   last->next = new_node;
   return;
 }
+
 void deleteNode(struct Node** head_ref, int key) {
   struct Node *temp = *head_ref, *prev;
  if (temp != NULL && temp->data == key) {
@@ -104,3 +105,9 @@ int main() {
   printf("\nSorted List: ");
   printList(head);
 }
+/*
+Linked list:  3  2  5  1  4 
+After deleting an element:  2  5  1  4 
+3 is not found
+Sorted List:  1  2  4  5
+*/
