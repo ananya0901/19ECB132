@@ -7,3 +7,7 @@ main()
   s=n*n+1/2;
   printf("sum of integers is %d",s);
 }
+/*output
+3
+sum of integers is 6
+*/
