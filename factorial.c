@@ -20,3 +20,7 @@ void main()
        printf("factorial %d",fac);
     }
 }
+/* output
+4
+factorial 24
+*/
