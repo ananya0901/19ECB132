@@ -20,3 +20,7 @@ void main()
     printf("%d",cot);
     
 }
+/* output
+4
+3
+*/
