@@ -10,3 +10,4 @@
 [singlelinkedlist.c](singlelinkedlist.c)  
 [sumofintegers.c](sumofintegers.c)  
 [linerardatastructure.c](lineardatastructure.c)  
+[PATTERN.C](PATTERN.C)
