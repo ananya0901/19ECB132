@@ -1,0 +1,67 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+class complexnumber
+{
+	private:
+		float r,i;
+		
+	public:
+		void setdata()
+		{
+			cout<<"enter real part:";
+			cin>>this->r;
+			cout<<"enter imaginary part:";
+			cin>>this->i;
+    	}
+		void displaydata();
+		void addition(complexnumber a,complexnumber b);
+		void subtraction(complexnumber a,complexnumber b);
+		void multiplication(complexnumber a,complexnumber b);
+};
+void complexnumber::displaydata()
+{
+	cout<<r;
+	if(i!=0)
+	{
+		if(i>0)cout<<"+"<<i<<"i"<<endl;
+		else cout<<i<<"i"<<endl;
+	}
+	
+}
+	void complexnumber::addition(complexnumber a,complexnumber b)
+	{
+	this->r=a.r+b.r;
+	this->i=a.i+b.i;
+} 
+void complexnumber::subtraction(complexnumber a,complexnumber b)
+{
+		this->r=a.r-b.r;
+		this->i=a.i-b.i;
+}
+	void complexnumber::multiplication(complexnumber a,complexnumber b)
+	{
+	
+     this->r=(a.r*b.r)-(a.i*b.i);
+	 this->i=(a.r*b.i)+(a.i*b.r);
+} 
+int main(int arge,char* argv[])
+{
+	complexnumber p,q,n,s,t;
+	p.setdata();
+	cout<<"1st complex number details"<<endl;
+	p.displaydata();
+	q.setdata();
+	cout<<"2nd complex number details"<<endl;
+    q.displaydata();
+	n.addition(p,q);
+	cout<<"addition "<<endl;
+	n.displaydata();
+	s.subtraction(p,q);
+	cout<<"subtreaction "<<endl;
+	s.displaydata();
+	t.multiplication(p,q);
+	cout<<"multiplication"<<endl;
+	t.displaydata();
+	return 0;
+	}
