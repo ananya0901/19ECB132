@@ -1,0 +1,270 @@
+//5.1
+#include<iostream>
+using namespace std;
+
+class items
+{
+	int number; 
+	float cost; 
+ public:
+	void getdata(int a , float b );	 
+	                                 
+	void putdata(void)
+	{
+		cout << "number :"<< number <<"\n";
+		cout << "cost :"<< cost << "\n";
+	 } 
+};
+
+void items :: getdata(int a , float b) 
+{
+	number = a;
+	cost = b;	
+}  
+int main()
+{
+	items x;
+	
+	cout <<"\nobject x"<<"\n";
+	
+	x.getdata(100, 299.89);
+	x.putdata();
+	
+	items y;
+	
+	cout << "\nobject y" << "\n";
+	
+	y.getdata(200, 175.50);
+	y.putdata();
+	
+	return 0;
+}
+
+//5.2
+#include<iostream>
+#include<string>
+using namespace std;
+
+class binary
+{
+	string s;
+	 
+  public:
+  	  void read(void)
+  	  {
+  	  	cout<<"enter a binary number :";
+  	  	cin>>s;
+	  }
+      void chk_bin(void)
+	  {
+	  	for(int i=0;i<s.length();i++)
+	  	{
+	  		if(s.at(i)!='0'&& s.at(i)!='1')
+	  		{
+	  			cout<<"\nincorrect binary number format...the program will quit";
+	  			exit(0);
+			  }
+		    }
+			  }  	  
+       
+       	void ones(void)
+	   {
+	   	chk_bin();
+	   	for(int i=0;i<s.length();i++)
+	   	{
+	   		if(s.at(i)=='0')
+	   		s.at(i)='1';
+	   		else
+	   		s.at(i)='0';
+		   }
+	   }
+	   void displayones(void)
+	   {
+	   	ones();
+	   	cout<<"\nthe 1's compliment of the above binary number is:"<<s;
+	   }
+};
+    int main()
+    {
+    	binary b;
+    	b.read();
+		b.displayones();
+		return 0;
+			}
+      
+      //5.3
+      #include<iostream>
+using namespace std;
+
+int const m=50;
+class items
+{
+
+	int itemcode[m];
+	float itemprice[m];
+	int count;
+	public:
+		void cnt(void){count = 0;}
+		void getitem(void);
+		void displaysum(void);
+		void remove(void);
+		void displayitems(void);
+};
+void items :: getitem(void)
+
+{
+	cout<<"enter item code";
+	cin>>itemcode[count];
+	cout<<"enter item cost";
+	cin>>itemprice[count];
+	count++;
+}
+void items::displaysum(void)
+{
+	float sum=0;
+	for(int i=0;i<count;i++)
+	sum=sum+itemprice[i];
+	cout<<"\ntotal value:"<<sum<<"\n";
+}
+void items::remove(void)
+{
+	int a;
+	cout<<"enter item code:";
+	cin>>a;
+	for(int i=0;i<count;i++)
+	if(itemcode[i]==a)
+	itemprice[i]=0;
+}
+void items::displayitems(void)
+{
+	cout<<"\ncode price\n";
+	for(int i=0;i<count;i++)
+	{
+		cout<<"\n"<<itemcode[i];
+		cout<<" "<<itemprice[i];
+	}
+	cout<<"\n";
+}
+int main()
+{
+	items order;
+	order.cnt();
+	int x;
+	do
+	 {
+		cout<<"\nyou can do the following;"
+		    <<"enter appropriate number \n";
+		cout<<"\n1 : add an item";
+		cout<<"\n2 : display total value";
+		cout<<"\n3 : delte an item";
+		cout<<"\n4 : display all items";
+		cout<<" \n5 : quit";
+		cout<<"\n\nwhat is your option";
+		cin>>x;
+		
+		switch(x)
+		{
+			case 1: order.getitem();break;
+			case 2: order.displaysum();break;
+			case 3: order.remove();break;
+			case 4: order.displayitems();break;
+			case 5: break;
+			default: cout<<"error in input; try again\n";
+		} 
+		}while(x!=5);
+	
+	return 0;
+}
+
+//5.4
+#include<iostream>
+using namespace std;
+class employee
+{
+	char name[30];
+	float age;
+	public:
+		void getdata(void);
+		void putdata(void);
+	
+};
+void employee::getdata(void)
+{
+	cout <<"Enter name:";
+	cin>>name;
+	cout<<"Enter age:";
+	cin>>age;
+
+}
+void employee::putdata(void)
+{
+	cout<<"Name:"<<name<<"\n";
+	cout<<"Age:"<<age<<"\n";
+	
+}
+const int size=3;
+int main()
+{
+	employee manager[size];
+	for(int i=0; i<size; i++)
+{
+	cout<< "\nDetails of manager"<< i+1<<"\n";
+	manager[i].getdata();
+	
+}
+cout<<"\n";
+for(int i=0; i<size; i++)
+{
+	cout<<"\nManager"<<i+1<<"\n";
+	manager[i].putdata();	
+}
+   return 0;
+
+}
+
+//5.5
+#include <iostream>
+
+using namespace std;
+
+class test 
+{
+	int code;
+	static int count;
+  public:
+       void setcode(void)
+	   {
+	   	code = ++count;
+	   }
+	   void showcode (void)
+	   {
+	   	cout <<"object number: " << code << "\n";
+	   }
+	   static void showcount (void)        
+	   {
+	   	cout << "count : " << count << "\n";
+	   }	
+};
+int test :: count;
+int main()
+{
+	test t1 , t2 ;
+	
+	t1.setcode();
+	t2.setcode();
+	
+	test :: showcount();
+	
+	test t3;
+	t3.setcode();
+	
+	test :: showcount();
+		
+	t1.showcode();
+    t2.showcode();
+    t3.showcode();
+	
+	return 0;	
+}
+
+//5.6
