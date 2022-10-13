@@ -32,7 +32,6 @@ int main()
 	amount=value(10000.00,5,0.30);
 	cout<<"\n final value="<<amount<<"\n\n";
 	printline('=');
-	getch();
 	return 0;
 }
 float value(float p, int n,float r)
@@ -68,16 +67,14 @@ int main()
 	cout<<"enter a positive integer:";
 	cin>>num;
 	cout<<"factorial of  "<<num<<" is "<<fact(num);
-	getch();
 	return 0;
 }
 //4.4
 #include<iostream>
-#include<conio.h>
 using namespace std;
 void TOH(int d,char tower1,char tower2,char tower3)
 {
-	if(d=1)
+	if(d==1)
 	{
 		cout<<" \nshift top disk from tower "<<tower1<<" to tower"<<tower2;
 		return;
@@ -97,10 +94,9 @@ int main()
 	cout<<" \nthere are "<<disk<<" disks in tower 1\n";
 	TOH(disk,'1','2','3');
 	cout<<"\n\n"<<disk<<" disks in tower 1 are shifted to tower 2";
-	getch();
 	return 0;
 }
-\\4.5
+\\4.5 dout output coming
 #include<iostream>
 int area(int);
 int area(int,int);
