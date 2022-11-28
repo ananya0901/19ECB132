@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+class balaguruswamy
+{
+	public:
+		virtual void example()=0;
+};
+class c:public balaguruswamy
+{
+	public:
+		void example()
+		{
+			cout<<"c text book written by balaguruswamy";
+		}
+};
+class oops:public balaguruswamy
+{
+	public:
+		void example()
+		{
+			cout<<"c++ text book written by balaguruswamy";
+		}
+};
+int main()
+{
+
+	arra[2];
+	c e1;
+	oops e2;
+	arra[0]=&e1;
+	arra[1]=&e2;
+	arra[0]->example();
+	arra[1]->example();
+	return 0;
+}
